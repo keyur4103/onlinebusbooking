@@ -1,0 +1,26 @@
+.seat-booking-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.seat-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 10px;
+}
+
+.seat {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.seat.selected {
+  background-color: #3498db;
+  color: #fff;
+}
