@@ -1,10 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "../frontend/Home";
-import AboutUs from "../frontend/AboutUs";
-import SearchBus from "../frontend/SearchBus";
-import Login from "../frontend/Login";
-import Register from "../frontend/Register";
+// import Home from "../frontend/Home";
+// import AboutUs from "../frontend/AboutUs";
+// import SearchBus from "../frontend/SearchBus";
+// import Login from "../frontend/Login";
+// import Register from "../frontend/Register";
 import { Toaster } from "react-hot-toast";
 import RouteDetail from "./RouteDetail";
 import SeatBookingComponent from "./src/SeatBookingComponent";
@@ -19,6 +19,11 @@ import UpdateRoute from "./admin/UpdateRoute";
 import EditRoute from "./admin/EditRoute";
 import AdminHome from "./admin/AdminHome";
 import CancelTicket from "./admin/CancleTicket";
+import Home from "./Home";
+import AboutUs from "./AboutUs";
+import SearchBus from "./SearchBus";
+import Register from "./Register";
+import Login from "./Login";
 
 export default function Default() {
   return (
