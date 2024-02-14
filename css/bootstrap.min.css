@@ -376,7 +376,7 @@ img {
 }
 
 hr {
-  margin-top: 20px;
+  margintop: 20px;
   margin-bottom: 20px;
   border: 0;
   border-top: 1px solid #eee;
@@ -443,7 +443,7 @@ h6 .small,
 h1,
 h2,
 h3 {
-  margin-top: 20px;
+  margintop: 20px;
   margin-bottom: 10px;
 }
 
@@ -459,7 +459,7 @@ h3 .small {
 h4,
 h5,
 h6 {
-  margin-top: 10px;
+  margintop: 10px;
   margin-bottom: 10px;
 }
 
@@ -592,7 +592,7 @@ cite {
 
 ul,
 ol {
-  margin-top: 0;
+  margintop: 0;
   margin-bottom: 10px;
 }
 
@@ -624,7 +624,7 @@ ol ol {
 }
 
 dl {
-  margin-top: 0;
+  margintop: 0;
   margin-bottom: 20px;
 }
 
@@ -2056,7 +2056,7 @@ input[type="search"] {
 input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
-  margin-top: 1px \9;
+  margintop: 1px \9;
   line-height: normal;
 }
 
@@ -2161,7 +2161,7 @@ textarea.form-control {
   display: block;
   min-height: 20px;
   padding-left: 20px;
-  margin-top: 10px;
+  margintop: 10px;
   margin-bottom: 10px;
 }
 
@@ -2183,7 +2183,7 @@ textarea.form-control {
 
 .radio + .radio,
 .checkbox + .checkbox {
-  margin-top: -5px;
+  margintop: -5px;
 }
 
 .radio-inline,
@@ -2198,7 +2198,7 @@ textarea.form-control {
 
 .radio-inline + .radio-inline,
 .checkbox-inline + .checkbox-inline {
-  margin-top: 0;
+  margintop: 0;
   margin-left: 10px;
 }
 
@@ -2338,7 +2338,7 @@ textarea.input-lg {
 
 .help-block {
   display: block;
-  margin-top: 5px;
+  margintop: 5px;
   margin-bottom: 10px;
   color: #737373;
 }
@@ -2362,7 +2362,7 @@ textarea.input-lg {
   .form-inline .checkbox {
     display: inline-block;
     padding-left: 0;
-    margin-top: 0;
+    margintop: 0;
     margin-bottom: 0;
   }
 
@@ -2379,7 +2379,7 @@ textarea.input-lg {
 .form-horizontal .radio-inline,
 .form-horizontal .checkbox-inline {
   padding-top: 7px;
-  margin-top: 0;
+  margintop: 0;
   margin-bottom: 0;
 }
 
@@ -2818,7 +2818,7 @@ fieldset[disabled] .btn-link:focus {
 }
 
 .btn-block + .btn-block {
-  margin-top: 5px;
+  margintop: 5px;
 }
 
 input[type="submit"].btn-block,
@@ -2853,7 +2853,7 @@ input[type="button"].btn-block {
   transition: height 0.35s ease;
 }
 
-@font-face {
+/* @font-face {
   font-family: "Glyphicons Halflings";
   src: url("../fonts/glyphicons-halflings-regular.eot");
   src: url("../fonts/glyphicons-halflings-regular.eot?#iefix")
@@ -2862,9 +2862,9 @@ input[type="button"].btn-block {
     url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"),
     url("../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular")
       format("svg");
-}
+} */
 
-.glyphicon {
+/* .glyphicon {
   position: relative;
   top: 1px;
   display: inline-block;
@@ -3678,7 +3678,7 @@ input[type="button"].btn-block {
 
 .glyphicon-tree-deciduous:before {
   content: "\e200";
-}
+} */
 
 .caret {
   display: inline-block;
@@ -4025,7 +4025,7 @@ input[type="button"].btn-block {
 .btn-group-vertical > .btn + .btn-group,
 .btn-group-vertical > .btn-group + .btn,
 .btn-group-vertical > .btn-group + .btn-group {
-  margin-top: -1px;
+  margintop: -1px;
   margin-left: 0;
 }
 
@@ -4191,7 +4191,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .input-group-addon input[type="radio"],
 .input-group-addon input[type="checkbox"] {
-  margin-top: 0;
+  margintop: 0;
 }
 
 .input-group .form-control:first-child,
@@ -4427,7 +4427,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .nav-stacked > li + li {
-  margin-top: 2px;
+  margintop: 2px;
   margin-left: 0;
 }
 
@@ -4497,7 +4497,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .nav-tabs .dropdown-menu {
-  margin-top: -1px;
+  margintop: -1px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4694,7 +4694,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   position: relative;
   float: right;
   padding: 9px 10px;
-  margin-top: 8px;
+  margintop: 8px;
   margin-right: 15px;
   margin-bottom: 8px;
   background-color: transparent;
@@ -4711,7 +4711,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-toggle .icon-bar + .icon-bar {
-  margin-top: 4px;
+  margintop: 4px;
 }
 
 @media (min-width: 768px) {
@@ -4735,7 +4735,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     position: static;
     float: none;
     width: auto;
-    margin-top: 0;
+    margintop: 0;
     background-color: transparent;
     border: 0;
     box-shadow: none;
@@ -4788,7 +4788,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-form {
   padding: 10px 15px;
-  margin-top: 8px;
+  margintop: 8px;
   margin-right: -15px;
   margin-bottom: 8px;
   margin-left: -15px;
@@ -4819,7 +4819,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   .navbar-form .checkbox {
     display: inline-block;
     padding-left: 0;
-    margin-top: 0;
+    margintop: 0;
     margin-bottom: 0;
   }
 
@@ -4854,7 +4854,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-nav > li > .dropdown-menu {
-  margin-top: 0;
+  margintop: 0;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4871,22 +4871,22 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-btn {
-  margin-top: 8px;
+  margintop: 8px;
   margin-bottom: 8px;
 }
 
 .navbar-btn.btn-sm {
-  margin-top: 10px;
+  margintop: 10px;
   margin-bottom: 10px;
 }
 
 .navbar-btn.btn-xs {
-  margin-top: 14px;
+  margintop: 14px;
   margin-bottom: 14px;
 }
 
 .navbar-text {
-  margin-top: 15px;
+  margintop: 15px;
   margin-bottom: 15px;
 }
 
@@ -5514,7 +5514,7 @@ a.thumbnail.active {
 }
 
 .alert h4 {
-  margin-top: 0;
+  margintop: 0;
   color: inherit;
 }
 
@@ -5528,7 +5528,7 @@ a.thumbnail.active {
 }
 
 .alert > p + p {
-  margin-top: 5px;
+  margintop: 5px;
 }
 
 .alert-dismissable {
@@ -5788,11 +5788,11 @@ a.thumbnail.active {
 
 .media,
 .media .media {
-  margin-top: 15px;
+  margintop: 15px;
 }
 
 .media:first-child {
-  margin-top: 0;
+  margintop: 0;
 }
 
 .media-object {
@@ -5885,7 +5885,7 @@ a.list-group-item.active:focus .list-group-item-text {
 }
 
 .list-group-item-heading {
-  margin-top: 0;
+  margintop: 0;
   margin-bottom: 5px;
 }
 
@@ -6030,7 +6030,7 @@ a.list-group-item.active:focus .list-group-item-text {
 }
 
 .panel-title {
-  margin-top: 0;
+  margintop: 0;
   margin-bottom: 0;
   font-size: 16px;
   color: inherit;
@@ -6055,7 +6055,7 @@ a.list-group-item.active:focus .list-group-item-text {
 }
 
 .panel-group .panel + .panel {
-  margin-top: 5px;
+  margintop: 5px;
 }
 
 .panel-group .panel-heading {
@@ -6313,7 +6313,7 @@ button.close {
 }
 
 .modal-header .close {
-  margin-top: -2px;
+  margintop: -2px;
 }
 
 .modal-title {
@@ -6328,7 +6328,7 @@ button.close {
 
 .modal-footer {
   padding: 19px 20px 20px;
-  margin-top: 15px;
+  margintop: 15px;
   text-align: right;
   border-top: 1px solid #e5e5e5;
 }
@@ -6396,7 +6396,7 @@ button.close {
 
 .tooltip.top {
   padding: 5px 0;
-  margin-top: -3px;
+  margintop: -3px;
 }
 
 .tooltip.right {
@@ -6406,7 +6406,7 @@ button.close {
 
 .tooltip.bottom {
   padding: 5px 0;
-  margin-top: 3px;
+  margintop: 3px;
 }
 
 .tooltip.left {
@@ -6457,7 +6457,7 @@ button.close {
 .tooltip.right .tooltip-arrow {
   top: 50%;
   left: 0;
-  margin-top: -5px;
+  margintop: -5px;
   border-right-color: #000;
   border-width: 5px 5px 5px 0;
 }
@@ -6465,7 +6465,7 @@ button.close {
 .tooltip.left .tooltip-arrow {
   top: 50%;
   right: 0;
-  margin-top: -5px;
+  margintop: -5px;
   border-left-color: #000;
   border-width: 5px 0 5px 5px;
 }
@@ -6512,7 +6512,7 @@ button.close {
 }
 
 .popover.top {
-  margin-top: -10px;
+  margintop: -10px;
 }
 
 .popover.right {
@@ -6520,7 +6520,7 @@ button.close {
 }
 
 .popover.bottom {
-  margin-top: 10px;
+  margintop: 10px;
 }
 
 .popover.left {
@@ -6581,7 +6581,7 @@ button.close {
 .popover.right .arrow {
   top: 50%;
   left: -11px;
-  margin-top: -11px;
+  margintop: -11px;
   border-right-color: #999;
   border-right-color: rgba(0, 0, 0, 0.25);
   border-left-width: 0;
@@ -6615,7 +6615,7 @@ button.close {
 .popover.left .arrow {
   top: 50%;
   right: -11px;
-  margin-top: -11px;
+  margintop: -11px;
   border-left-color: #999;
   border-left-color: rgba(0, 0, 0, 0.25);
   border-right-width: 0;
@@ -6759,7 +6759,7 @@ button.close {
 .carousel-control .icon-next {
   width: 20px;
   height: 20px;
-  margin-top: -10px;
+  margintop: -10px;
   margin-left: -10px;
   font-family: serif;
 }
@@ -6828,7 +6828,7 @@ button.close {
   .carousel-control .icon-next {
     width: 30px;
     height: 30px;
-    margin-top: -15px;
+    margintop: -15px;
     margin-left: -15px;
     font-size: 30px;
   }

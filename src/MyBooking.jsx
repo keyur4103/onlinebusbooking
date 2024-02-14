@@ -88,7 +88,7 @@ const MyBooking = ({ userId }) => {
   };
 
   return (
-    <div className="container" style={{ marginTop: "10px" }}>
+    <div className="container" style={{ margintop: "10px" }}>
       <table
         className="table table-hover table-bordered"
         cellSpacing={0}

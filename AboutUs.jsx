@@ -9,7 +9,7 @@ function AboutUs() {
     <>
       <Navbar />
 
-      <div className="container" style={{ marginTop: "6%" }}>
+      <div className="container" style={{ margintop: "6%" }}>
         <div className="panel panel-default">
           <div className="panel-heading">
             <div className="panel-title">

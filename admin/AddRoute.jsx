@@ -60,7 +60,7 @@ function AddRoute() {
     <>
       <AdminNavbar />
       <form method="POST" onSubmit={hookFormSubmit(onSubmit)}>
-        <div className="row centered-form" style={{ marginTop: "5%" }}>
+        <div className="row centered-form" style={{ margintop: "5%" }}>
           <div className="col-lg-8 col-sm-8 col-md-2 col-sm-offset-2 col-md-offset-2">
             <div className="panel panel-default">
               <div className="panel-heading">
@@ -299,7 +299,7 @@ function AddRoute() {
                       type="submit"
                       id="ContentPlaceHolder1_btnSave"
                       className="btn btn-info "
-                      style={{ width: "auto", marginTop: "20px" }}
+                      style={{ width: "auto", margintop: "20px" }}
                     >
                       submit
                     </button>

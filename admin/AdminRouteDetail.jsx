@@ -38,7 +38,7 @@ function AdminRouteDetail() {
       <div>
         <title>On Line Bus Booking</title>
         <form method="post" action="" id="form1">
-          <div className="container" style={{ marginTop: "8%" }}>
+          <div className="container" style={{ margintop: "8%" }}>
             <table
               className="table table-hover table-bordered"
               cellSpacing={0}

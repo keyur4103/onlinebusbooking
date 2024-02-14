@@ -67,7 +67,7 @@ function UpdateRoute() {
       <div>
         <title>On Line Bus Booking</title>
         <form method="post" action="" id="form1">
-          <div className="container" style={{ marginTop: "8%" }}>
+          <div className="container" style={{ margintop: "8%" }}>
             <table
               className="table table-hover table-bordered"
               cellSpacing={0}
@@ -107,7 +107,9 @@ function UpdateRoute() {
                       <span id={`bustype${index}`}>{bus.bustype}</span>
                     </td>
                     <td>
-                      <a href={`/admin/editroute/${bus._id}`}>updateroute details</a>
+                      <a href={`/admin/editroute/${bus._id}`}>
+                        updateroute details
+                      </a>
                       &nbsp;
                       <a href="" onClick={(e) => deleteBus(e, bus._id)}>
                         Deleteroute details

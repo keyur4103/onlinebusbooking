@@ -30,7 +30,7 @@ function AddBoarding() {
   };
 
   return (
-    <div className="row centered-form" style={{ marginTop: "5%" }}>
+    <div className="row centered-form" style={{ margintop: "5%" }}>
       <div className="col-lg-8 col-sm-8 col-md-2 col-sm-offset-2 col-md-offset-2">
         <h2>Add Boarding Point</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -60,7 +60,7 @@ function AddBoarding() {
               <button
                 type="submit"
                 className="btn btn-info"
-                style={{ width: "auto", marginTop: "20px" }}
+                style={{ width: "auto", margintop: "20px" }}
               >
                 Submit
               </button>

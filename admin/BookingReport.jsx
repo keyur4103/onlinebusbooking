@@ -29,7 +29,7 @@ function BookingReport() {
     <>
       <AdminNavbar />
 
-      <div className="container" style={{ marginTop: "6%" }}>
+      <div className="container" style={{ margintop: "6%" }}>
         <div>
           <table
             cellSpacing={0}

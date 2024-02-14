@@ -270,7 +270,7 @@ const SeatBookingComponent = () => {
                 </tbody>
               </table>
             </div>
-            <div style={{ marginTop: "5%" }} className="col-lg-12">
+            <div style={{ margintop: "5%" }} className="col-lg-12">
               <span id="BoardingPoint" style={{ "font-weight": "bold" }}>
                 Boarding Points
               </span>
