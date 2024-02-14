@@ -1,6 +1,6 @@
 import React from "react";
-import "../frontend/css/style.css";
-import "../frontend/css/bootstrap.min.css";
+// import "../frontend/css/style.css";
+// import "../frontend/css/bootstrap.min.css";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";

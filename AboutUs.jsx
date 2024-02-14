@@ -1,7 +1,7 @@
 import React from "react";
-import "../frontend/css/style.css";
-// import "../frontend/css";
-import "../frontend/css/bootstrap.min.css";
+// import "../frontend/css/style.css";
+// // import "../frontend/css";
+// import "../frontend/css/bootstrap.min.css";
 import Navbar from "./src/Navbar";
 
 function AboutUs() {
