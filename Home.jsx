@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "../frontend/css/style.css";
-import "../frontend/css/bootstrap.min.css";
+// import "../frontend/css/style.css";
+// import "../frontend/css/bootstrap.min.css";
 import photo from "../frontend/img/banner-home-1.jpg";
 
 import Navbar from "./src/Navbar";
