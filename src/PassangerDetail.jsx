@@ -58,7 +58,7 @@ const PassengerDetails = () => {
           };
 
           const createPassengerResponse = await axios.post(
-            "http://localhost:5000/api/passengerDetails",
+            `${import.meta.env.VITE_LIVE_SERVER}/api/passengerDetails`,
             data
           );
 
@@ -66,10 +66,12 @@ const PassengerDetails = () => {
 
           // Now, use the obtained passengerId in the /sendTicketByEmail endpoint
           const sendTicketResponse = await axios.post(
-            `http://localhost:5000/sendTicketByEmail/${passengerId}`
+            `${
+              import.meta.env.VITE_LIVE_SERVER
+            }/sendTicketByEmail/${passengerId}`
           );
           const sendTicketsms = await axios.post(
-            `http://localhost:5000/sendTicketBysms/${passengerId}`
+            `${import.meta.env.VITE_LIVE_SERVER}/sendTicketBysms/${passengerId}`
           );
 
           // setIsLoading(false);

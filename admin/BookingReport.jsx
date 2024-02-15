@@ -8,7 +8,9 @@ function BookingReport() {
     // Fetch all passengers from MongoDB
     const fetchPassengers = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/passengers");
+        const response = await fetch(
+            `${import.meta.env.VITE_LIVE_SERVER}/api/passengers`
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch passengers");
         }

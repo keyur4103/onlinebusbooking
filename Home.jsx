@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-// import "../frontend/css/style.css";
-// import "../frontend/css/bootstrap.min.css";
-import photo from "../frontend/img/banner-home-1.jpg";
+import React from "react";
+import "./public/css/style.css";
+import "./public/css/bootstrap.min.css";
+import photo from "/img/banner-home-1.jpg";
 
 import Navbar from "./src/Navbar";
 import Footer from "./src/Footer";

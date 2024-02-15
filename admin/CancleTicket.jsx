@@ -9,7 +9,7 @@ const CancelTicket = () => {
   useEffect(() => {
     // Fetch data from your API endpoint
     axios
-      .get("http://localhost:5000/api/canclebookings") // Update the URL to match your backend API endpoint
+      .get(`${import.meta.env.VITE_LIVE_SERVER}/api/canclebookings`) // Update the URL to match your backend API endpoint
       .then((response) => {
         // Add status field to each booking object
         const bookingsWithStatus = response.data.map((booking) => ({
@@ -25,7 +25,9 @@ const CancelTicket = () => {
 
   const deleteTicket = (cancleid, index) => {
     axios
-      .delete(`http://localhost:5000/api/deleteticket/${cancleid}`)
+      .delete(
+        `${import.meta.env.VITE_LIVE_SERVER}/api/deleteticket/${cancleid}`
+      )
       .then((response) => {
         toast.success("Ticket cancle successfully");
         // Update status to "Success" after deletion

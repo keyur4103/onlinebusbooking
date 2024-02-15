@@ -26,7 +26,7 @@ function Demo({ onPaymentSuccess }) {
       return;
     }
 
-    const data = await fetch("http://localhost:5000/razorpay", {
+    const data = await fetch(`${import.meta.env.VITE_LIVE_SERVER}/razorpay`, {
       method: "POST",
     }).then((t) => t.json());
 

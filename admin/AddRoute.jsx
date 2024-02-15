@@ -46,7 +46,10 @@ function AddRoute() {
       };
       console.log("🚀 ~ onSubmit ~ formattedData:", formattedData);
 
-      await axios.post("http://localhost:5000/add-route", formattedData);
+      await axios.post(
+        `${import.meta.env.VITE_LIVE_SERVER}/add-route`,
+        formattedData
+      );
       toast.success("Successful add busdetail");
       reset();
     } catch (error) {

@@ -44,7 +44,7 @@ function EditRoute() {
     const fetchBusData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/editbus/${busid}`
+          `${import.meta.env.VITE_LIVE_SERVER}/api/editbus/${busid}`
         );
         console.log("🚀 ~ fetchBusData ~ response:", response);
         if (!response.data) {
@@ -70,7 +70,7 @@ function EditRoute() {
 
       // Assuming you are using PUT or PATCH method to update the existing data
       await axios.put(
-        `http://localhost:5000/api/update-route/${busid}`,
+        `${import.meta.env.VITE_LIVE_SERVER}/api/update-route/${busid}`,
         formattedData
       );
       navigate("/admin/updateroute");

@@ -7,6 +7,9 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useNavigate } from "react-router-dom";
 
 export default function SearchBus() {
+  const localServer = import.meta.env.VITE_LIVE_SERVER;
+
+  console.log(localServer);
   const navigate = useNavigate();
   const [cities, setCities] = useState({
     originValues: [],
@@ -45,7 +48,9 @@ export default function SearchBus() {
 
       // Fetch data from the API based on user input
       const response = await fetch(
-        `http://localhost:5000/api/busDetails?origin=${selectedOrigin}&destination=${selectedDestination}&traveldate=${selectedDate}`
+        `${
+          import.meta.env.VITE_LIVE_SERVER
+        }/api/busDetails?origin=${selectedOrigin}&destination=${selectedDestination}&traveldate=${selectedDate}`
       );
 
       // Check if the response is successful (status code 200)
@@ -75,7 +80,9 @@ export default function SearchBus() {
     const fetchCitiesFromAPI = async () => {
       try {
         // Fetch data from the API
-        const response = await fetch("http://localhost:5000/api/cities");
+        const response = await fetch(
+          `${import.meta.env.VITE_LIVE_SERVER}/api/cities`
+        );
         const data = await response.json();
 
         // Update state with the retrieved data

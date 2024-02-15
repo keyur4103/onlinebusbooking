@@ -10,7 +10,9 @@ const MyBooking = ({ userId }) => {
   useEffect(() => {
     const fetchBookingData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/booking/${UserId}`);
+        const response = await fetch(
+          `${import.meta.env.VITE_LIVE_SERVER}/booking/${UserId}`
+        );
         const data = await response.json();
         console.log("🚀 ~ fetchBookingData ~ data:", data);
         setBookingData(data);
@@ -63,7 +65,7 @@ const MyBooking = ({ userId }) => {
   const cancelTicket = async (bookingId) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/cancel/${bookingId}`,
+        `${import.meta.env.VITE_LIVE_SERVER}/cancel/${bookingId}`,
         {
           method: "POST",
           headers: {

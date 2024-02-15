@@ -17,10 +17,13 @@ export default function Login() {
     const password = document.getElementById("txtPassword").value;
 
     try {
-      const response = await axios.post("http://localhost:5000/api/login", {
-        mobileNo,
-        password,
-      });
+      const response = await axios.post(
+        `${import.meta.env.VITE_LIVE_SERVER}/api/login`,
+        {
+          mobileNo,
+          password,
+        }
+      );
       console.log(response);
 
       if (response.data.success) {

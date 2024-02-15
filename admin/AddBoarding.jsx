@@ -9,7 +9,7 @@ function AddBoarding() {
   const onSubmit = async (data) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/addboarding/${busid}`,
+        `${import.meta.env.VITE_LIVE_SERVER}/api/addboarding/${busid}`,
         {
           method: "POST",
           headers: {

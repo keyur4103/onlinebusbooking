@@ -95,7 +95,9 @@ const SeatBookingComponent = () => {
     const fetchConfirmedSeats = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/fetch-confirmed-seats/${busId}?date=${selecteddate}`
+          `${
+            import.meta.env.VITE_LIVE_SERVER
+          }/api/fetch-confirmed-seats/${busId}?date=${selecteddate}`
         );
         console.log("🚀 ~ fetchConfirmedSeats ~ response:", response);
 

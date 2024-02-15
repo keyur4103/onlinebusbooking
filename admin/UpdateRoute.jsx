@@ -11,7 +11,9 @@ function UpdateRoute() {
     const fetchBuses = async () => {
       try {
         // Fetch data from MongoDB endpoint
-        const response = await fetch("http://localhost:5000/api/buses"); // Update the endpoint URL accordingly
+        const response = await fetch(
+          `${import.meta.env.VITE_LIVE_SERVER}/api/buses`
+        ); // Update the endpoint URL accordingly
         if (!response.ok) {
           throw new Error("Failed to fetch buses");
         }
@@ -44,7 +46,7 @@ function UpdateRoute() {
       }
 
       const response = await Axios.delete(
-        `http://localhost:5000/api/deletebus/${id}`
+        `${import.meta.env.VITE_LIVE_SERVER}/api/deletebus/${id}`
       );
       console.log("🚀 ~ deleteBus ~ response:", response);
       if (response.status === 200) {

@@ -10,7 +10,9 @@ function AdminRouteDetail() {
     const fetchBuses = async () => {
       try {
         // Fetch data from MongoDB endpoint
-        const response = await fetch("http://localhost:5000/api/buses"); // Update the endpoint URL accordingly
+        const response = await fetch(
+          `${import.meta.env.VITE_LIVE_SERVER}/api/buses`
+        ); // Update the endpoint URL accordingly
         if (!response.ok) {
           throw new Error("Failed to fetch buses");
         }

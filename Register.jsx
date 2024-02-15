@@ -13,7 +13,10 @@ export default function Register() {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post("http://localhost:5000/api/register", data);
+      await axios.post(
+        `${import.meta.env.VITE_LIVE_SERVER}/api/register`,
+        data
+      );
 
       // If registration is successful, show a success message
       toast.success("Successful registration");
