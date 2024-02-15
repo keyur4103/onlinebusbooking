@@ -58,11 +58,11 @@ export default function Login() {
 
           <form method="post" action="" id="form1" onSubmit={handleLogin}>
             <div>
-              <div className="padding100" style={{ margintop: "3%" }}>
+              <div className="padding100" style={{ marginTop: "3%" }}>
                 <div className="container">
                   <div
                     id="loginbox"
-                    style={{ margintop: "10%" }}
+                    style={{ marginTop: "10%" }}
                     className="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2"
                   >
                     <div className="panel panel-default">

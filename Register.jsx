@@ -38,8 +38,8 @@ export default function Register() {
           <Navbar />
           <form method="POST" onSubmit={hookFormSubmit(onSubmit)}>
             <div>
-              <div className="container" style={{ margintop: "5%" }}></div>
-              <div className="row centered-form" style={{ margintop: "5%" }}>
+              <div className="container" style={{ marginTop: "5%" }}></div>
+              <div className="row centered-form" style={{ marginTop: "5%" }}>
                 <div className="col-lg-8 col-sm-8 col-md-2 col-sm-offset-2 col-md-offset-2">
                   <div className="panel panel-default">
                     <div className="panel-heading">

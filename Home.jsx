@@ -11,7 +11,7 @@ function Home() {
     <>
       <div>
         <Navbar />
-        <div className="container" style={{ margintop: "6%" }}>
+        <div className="container" style={{ marginTop: "6%" }}>
           <div className="row">
             <div className="col-lg-12">
               <img
@@ -21,7 +21,7 @@ function Home() {
                 alt="Bus Banner"
               />
             </div>
-            <div className="col-lg-12" style={{ margintop: "2%" }}>
+            <div className="col-lg-12" style={{ marginTop: "2%" }}>
               <div className="panel panel-default">
                 <div className="panel-heading">
                   <div className="panel-title">
@@ -43,7 +43,7 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-12" style={{ margintop: "2%" }}>
+            <div className="col-lg-12" style={{ marginTop: "2%" }}>
               <div className="panel panel-default">
                 <div className="panel-heading">
                   <div className="panel-title">

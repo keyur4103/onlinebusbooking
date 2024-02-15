@@ -102,7 +102,7 @@ export default function SearchBus() {
         <title>On Line Bus Booking</title>
         <div method="post" action="" id="form1">
           <Navbar />
-          <div className="container" style={{ margintop: "50px" }}>
+          <div className="container" style={{ marginTop: "50px" }}>
             <div className="row ">
               <div
                 className="col-lg-4 col-sm-4 col-md-2 col-sm-offset-2 col-md-offset-2"

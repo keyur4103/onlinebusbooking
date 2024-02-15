@@ -90,7 +90,7 @@ function AdminNavbar() {
                   onClick={handleLogout}
                   href=""
                   id="A1"
-                  style={{ margintop: "10px", fontWeight: "bold" }}
+                  style={{ marginTop: "10px", fontWeight: "bold" }}
                 >
                   Logout
                 </button>

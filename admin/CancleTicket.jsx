@@ -44,7 +44,7 @@ const CancelTicket = () => {
     <>
       <AdminNavbar />
       <br />
-      <div className="container" style={{ margintop: "50px" }}>
+      <div className="container" style={{ marginTop: "50px" }}>
         <table
           className="table table-hover table-bordered"
           cellSpacing={0}
