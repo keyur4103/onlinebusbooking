@@ -37,8 +37,7 @@ export default function Default() {
           <Route path="addboarding/:busid" element={<AddBoarding />} />
           <Route path="updateroute" element={<UpdateRoute />} />
           <Route path="editroute/:busid" element={<EditRoute />} />
-          <Route path="canclereq" element={<CancelTicket />} />{" "}
-          {/* Home page */}
+          <Route path="canclereq" element={<CancelTicket />} />
         </Route>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
