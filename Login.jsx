@@ -40,11 +40,13 @@ export default function Login() {
         navigate("/home"); // Use navigate to redirect to the login page
       } else {
         // Login failed, handle the error or display an error message
-        console.error(response.data.message);
         toast.error("Login failed. Please try again.");
+        // console.error(response.data.message);
       }
     } catch (error) {
       // Handle network errors or other issues
+      toast.error("Login failed. Please try again.");
+
       console.error(error);
     }
   };

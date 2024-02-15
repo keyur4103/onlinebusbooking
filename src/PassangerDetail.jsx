@@ -176,7 +176,7 @@ const PassengerDetails = () => {
 
   return (
     <>
-      <div className="container" style={{ margintop: "8%" }}>
+      <div className="container" style={{ marginTop: "10px" }}>
         <form onChange={handleSubmit(onSubmit)}>
           <table
             cellSpacing={0}
