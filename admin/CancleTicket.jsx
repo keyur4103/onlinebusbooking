@@ -19,13 +19,19 @@ const CancelTicket = () => {
   }, []);
 
   const deleteTicket = (cancleid) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to cancel this ticket?"
+    );
+    if (!confirmDelete) {
+      return; // If user cancels, do nothing
+    }
+
     axios
       .delete(
         `${import.meta.env.VITE_LIVE_SERVER}/api/deleteticket/${cancleid}`
       )
       .then((response) => {
-        toast.success("Ticket cancel successfully");
-        toast.success("your refud will be initiated in 24 hours");
+        toast.success("Ticket canceled successfully");
 
         // Refresh the bookings after deletion
         axios
@@ -38,7 +44,7 @@ const CancelTicket = () => {
           });
       })
       .catch((error) => {
-        toast.error("Error deleting ticket:", error);
+        toast.error("Error canceling ticket:", error);
       });
   };
 

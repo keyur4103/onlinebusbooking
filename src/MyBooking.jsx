@@ -80,6 +80,7 @@ const MyBooking = ({ userId }) => {
         // Update booking data after cancellation
 
         toast.success("Ticket canceled successfully");
+        toast.success("your refund will be initiated in 24 Hours");
       } else {
         toast.error("Failed to cancel ticket");
       }
