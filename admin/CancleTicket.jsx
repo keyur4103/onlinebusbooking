@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios"; // Assuming you're using axios for HTTP requests
+import axios from "axios";
 import AdminNavbar from "./AdminNavbar";
 import toast from "react-hot-toast";
 
@@ -9,31 +9,33 @@ const CancelTicket = () => {
   useEffect(() => {
     // Fetch data from your API endpoint
     axios
-      .get(`${import.meta.env.VITE_LIVE_SERVER}/api/canclebookings`) // Update the URL to match your backend API endpoint
+      .get(`${import.meta.env.VITE_LIVE_SERVER}/api/canclebookings`)
       .then((response) => {
-        // Add status field to each booking object
-        const bookingsWithStatus = response.data.map((booking) => ({
-          ...booking,
-          status: "Pending",
-        }));
-        setBookings(bookingsWithStatus);
+        setBookings(response.data);
       })
       .catch((error) => {
         toast.error("Error fetching bookings:", error);
       });
   }, []);
 
-  const deleteTicket = (cancleid, index) => {
+  const deleteTicket = (cancleid) => {
     axios
       .delete(
         `${import.meta.env.VITE_LIVE_SERVER}/api/deleteticket/${cancleid}`
       )
       .then((response) => {
-        toast.success("Ticket cancle successfully");
-        // Update status to "Success" after deletion
-        const updatedBookings = [...bookings];
-        updatedBookings[index].status = "Success";
-        setBookings(updatedBookings);
+        toast.success("Ticket cancel successfully");
+        toast.success("your refud will be initiated in 24 hours");
+
+        // Refresh the bookings after deletion
+        axios
+          .get(`${import.meta.env.VITE_LIVE_SERVER}/api/canclebookings`)
+          .then((response) => {
+            setBookings(response.data);
+          })
+          .catch((error) => {
+            toast.error("Error fetching bookings:", error);
+          });
       })
       .catch((error) => {
         toast.error("Error deleting ticket:", error);
@@ -81,7 +83,6 @@ const CancelTicket = () => {
                 <td>
                   <span id="Arrival">{booking.selecteddate}</span>
                 </td>
-
                 <td>
                   <span id="Fare">{booking.selectedseat}</span>
                 </td>
@@ -90,8 +91,8 @@ const CancelTicket = () => {
                 </td>
                 <td>
                   <button
-                    onClick={() => deleteTicket(booking.cancleid, index)}
-                    disabled={booking.status === "Success"}
+                    onClick={() => deleteTicket(booking.cancleid)}
+                    disabled={booking.status === "success"}
                   >
                     Approve
                   </button>
