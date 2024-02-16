@@ -64,6 +64,13 @@ const MyBooking = ({ userId }) => {
 
   const cancelTicket = async (bookingId) => {
     try {
+      const confirmDelete = window.confirm(
+        "Are you sure you want to cancel this ticket?"
+      );
+      if (!confirmDelete) {
+        return; // If user cancels, do nothing
+      }
+
       const response = await fetch(
         `${import.meta.env.VITE_LIVE_SERVER}/cancel/${bookingId}`,
         {
