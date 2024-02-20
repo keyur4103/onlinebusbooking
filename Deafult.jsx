@@ -1,10 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-// import Home from "../frontend/Home";
-// import AboutUs from "../frontend/AboutUs";
-// import SearchBus from "../frontend/SearchBus";
-// import Login from "../frontend/Login";
-// import Register from "../frontend/Register";
+
 import { Toaster } from "react-hot-toast";
 import RouteDetail from "./RouteDetail";
 import SeatBookingComponent from "./src/SeatBookingComponent";
@@ -30,7 +26,7 @@ export default function Default() {
     <>
       <Routes>
         <Route path="/admin">
-          <Route path="" element={<AdminHome />} /> {/* Home page */}
+          <Route path="" element={<AdminHome />} />
           <Route path="addroute" element={<AddRoute />} />
           <Route path="routedetail" element={<AdminRouteDetail />} />
           <Route path="bookingreport" element={<BookingReport />} />

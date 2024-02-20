@@ -9,13 +9,14 @@ const SeatBookingComponent = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(
     localStorage.getItem("isLoggedIn") === "true"
   );
+  const selectedbusid = localStorage.getItem("selectedBusId");
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [bookedSeats, setBookedSeats] = useState([]);
-  const responce = localStorage.getItem("responce");
-  const busData = JSON.parse(responce);
+  const [selectedBus, setBusDetail] = useState(null);
+
   const navigate = useNavigate();
   const { busId } = useParams();
-  const selectedBus = busData.find((bus) => bus._id === busId);
+  // const selectedBus = busData?.find((bus) => bus._id === busId);
   const selecteddate = localStorage.getItem("selecteddate");
   const handleSeatClick = (seatNumber) => {
     setSelectedSeats((prevSelectedSeats) => {
@@ -89,7 +90,30 @@ const SeatBookingComponent = () => {
       navigate("/login");
     }
   };
+  useEffect(() => {
+    console.log("object121454");
+    const fetchBusDetail = async () => {
+      try {
+        const response = await fetch(
+          `${import.meta.env.VITE_LIVE_SERVER}/api/selectedbusDetails/${busId}`
+        );
+        console.log(response);
+        if (response.ok) {
+          const data = await response.json();
+          console.log("🚀 ~ fetchBusDetail ~ data:", data);
+          setBusDetail(data);
+        } else {
+          console.error(`Error: ${response.status} - ${response.statusText}`);
+          // Handle error as needed
+        }
+      } catch (error) {
+        console.error("Error fetching data from API:", error);
+        // Handle error as needed
+      }
+    };
 
+    fetchBusDetail();
+  }, []);
   useEffect(() => {
     // Fetch confirmed seats for the selected date when the component mounts
     const fetchConfirmedSeats = async () => {
@@ -115,6 +139,9 @@ const SeatBookingComponent = () => {
   };
 
   console.log(bookedSeats);
+  if (!selectedBus) {
+    <div>Loading......</div>;
+  }
 
   return (
     <div className={styles.container1}>
@@ -208,20 +235,20 @@ const SeatBookingComponent = () => {
             </button>
             <p>Onward Journey From</p>
             <p style={{ "font-weight": "bold" }}>
-              BUS NAME : {selectedBus.busname}
+              BUS NAME : {selectedBus?.busname}
             </p>
             <span
               id="ContentPlaceHolder1_lblForm"
               style={{ "font-weight": "bold" }}
             >
-              {selectedBus.Origin}
+              {selectedBus?.Origin}
             </span>
             &nbsp; To &nbsp;
             <span
               id="ContentPlaceHolder1_lblTo"
               style={{ "font-weight": "bold" }}
             >
-              {selectedBus.Destination}
+              {selectedBus?.Destination}
             </span>
             <br />
             on &nbsp;
@@ -254,7 +281,7 @@ const SeatBookingComponent = () => {
                         <i className="fa fa-rupee" />
                       </span>
                       <span id="lblPerSeat" style={{ "font-weight": "bold" }}>
-                        {selectedBus.fare}
+                        {selectedBus?.fare}
                       </span>
                     </td>
                   </tr>
@@ -265,7 +292,7 @@ const SeatBookingComponent = () => {
                         <i className="fa fa-rupee" />
                       </span>
                       <span id="lbltotal" style={{ "font-weight": "bold" }}>
-                        {selectedSeats.length * selectedBus.fare}
+                        {selectedSeats.length * selectedBus?.fare}
                       </span>
                     </td>
                   </tr>
@@ -283,7 +310,7 @@ const SeatBookingComponent = () => {
                 onChange={handleBoardingPointChange}
               >
                 <option value={0}>Select Boarding Points</option>
-                {selectedBus.bordingpoint.map((item, i) => (
+                {selectedBus?.bordingpoint.map((item, i) => (
                   <option key={i} value={item.boardingplace}>
                     {item.boardingplace} - {item.boradingtime}
                   </option>

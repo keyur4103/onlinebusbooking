@@ -102,7 +102,7 @@ const Navbar = () => {
                 </li>
                 {isLoggedIn && (
                   <li>
-                    <button style={{ margin: "15px" }} onClick={handleLogout}>
+                    <button style={{ margin: "15px" }} onClick={handlelogout}>
                       logout
                     </button>
                   </li>

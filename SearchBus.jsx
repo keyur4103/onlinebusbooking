@@ -44,7 +44,7 @@ export default function SearchBus() {
         year: "numeric",
       });
 
-      console.log(formattedDate);
+      
 
       // Fetch data from the API based on user input
       const response = await fetch(
@@ -58,11 +58,14 @@ export default function SearchBus() {
         const data = await response.json();
         // Check if any data is returned
         if (data.length > 0) {
-          const responce = JSON.stringify(data);
-          localStorage.setItem("responce", responce);
+         
+          // localStorage.setItem("responce", responce);
+
           localStorage.setItem("selecteddate", formattedDate);
 
-          navigate("/detail");
+          navigate(
+            `/detail?origin=${selectedOrigin}&destination=${selectedDestination}&traveldate=${selectedDate}`
+          );
         } else {
           toast.error("No bus details found. Please try again.");
           console.error("No matching bus details found.");
