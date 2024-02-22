@@ -9,7 +9,7 @@ function BookingReport() {
     const fetchPassengers = async () => {
       try {
         const response = await fetch(
-            `${import.meta.env.VITE_LIVE_SERVER}/api/passengers`
+          `${import.meta.env.VITE_LIVE_SERVER}/api/passengers`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch passengers");
@@ -61,18 +61,20 @@ function BookingReport() {
               {passengers.map((passenger, index) => (
                 <tr key={index}>
                   <td>{passenger.busname}</td>
-                  <td>{passenger?.passengers?.[0].firstname}</td>
-                  <td>{passenger.userId.email}</td>
-                  <td>{passenger.userId.mobileNo}</td>
+                  <td>{passenger?.passengers?.[0]?.firstname}</td>
+                  <td>{passenger.userId ? passenger.userId.email : "N/A"}</td>
+                  <td>
+                    {passenger.userId ? passenger.userId.mobileNo : "N/A"}
+                  </td>
                   <td>{passenger.origin}</td>
                   <td>{passenger.destination}</td>
                   <td>{passenger.selecteddate}</td>
                   <td>{passenger.confirmseats[0]}</td>
                   <td>{passenger.totalamount}</td>
                   <td>
-                    {passenger.userId.firstName +
-                      " " +
-                      passenger.userId.lastName}
+                    {passenger.userId
+                      ? `${passenger.userId.firstName} ${passenger.userId.lastName}`
+                      : "N/A"}
                   </td>
                 </tr>
               ))}
