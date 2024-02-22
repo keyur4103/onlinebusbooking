@@ -1,6 +1,5 @@
 import React from "react";
-// import "../frontend/css/style.css";
-// import "../frontend/css/bootstrap.min.css";
+
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -24,7 +23,6 @@ export default function Login() {
           password,
         }
       );
-      console.log(response);
 
       if (response.data.success) {
         const name = response.data?.data;
@@ -38,14 +36,11 @@ export default function Login() {
 
         toast.success("Successful Logged in..");
         navigate("/home"); // Use navigate to redirect to the login page
-      } else {
-        // Login failed, handle the error or display an error message
-        toast.error("Login failed. Please try again.");
-        // console.error(response.data.message);
       }
     } catch (error) {
+      console.log("🚀 ~ handleLogin ~ error:", error);
       // Handle network errors or other issues
-      toast.error("Login failed. Please try again.");
+      toast.error(error.response.data.message);
 
       console.error(error);
     }

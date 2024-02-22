@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import Footer from "./src/Footer";
@@ -9,7 +8,10 @@ import Navbar from "./src/Navbar";
 
 export default function Register() {
   const { register, handleSubmit: hookFormSubmit, reset } = useForm();
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const navigate = useNavigate();
+  const [otpSent, setOTPSent] = useState(false);
+  const [otp, setOTP] = useState("");
+  const [verifiedMobileNo, setVerifiedMobileNo] = useState(""); // Corrected variable name
 
   const onSubmit = async (data) => {
     try {
@@ -17,22 +19,57 @@ export default function Register() {
         `${import.meta.env.VITE_LIVE_SERVER}/api/register`,
         data
       );
-
-      // If registration is successful, show a success message
+      // If OTP has not been sent yet, send OTP
+      await sendOTP(data.mobileNo);
+      setOTPSent(true);
+      setVerifiedMobileNo(data.mobileNo);
       toast.success("Successful registration");
       reset();
-      navigate("/login"); // Use navigate to redirect to the login page
     } catch (error) {
       console.error("Registration failed:", error);
-      // Handle registration failure
       toast.error("Registration failed. Please try again.");
       reset();
     }
   };
 
+  const sendOTP = async (mobileNo) => {
+    try {
+      await axios.post(`${import.meta.env.VITE_LIVE_SERVER}/api/sendOTP`, {
+        mobileNo,
+      });
+      toast.success("OTP sent successfully");
+    } catch (error) {
+      console.error("Error sending OTP:", error);
+      toast.error("Failed to send OTP. Please try again.");
+    }
+  };
+
+  const handleOTPChange = (e) => {
+    setOTP(e.target.value);
+  };
+
+  const verifyOTP = async () => {
+    try {
+      await axios.post(`${import.meta.env.VITE_LIVE_SERVER}/api/verifyOTP`, {
+        verifiedMobileNo, // Corrected variable name
+        otp,
+      });
+      toast.success("OTP verified successfully");
+      // Now proceed with registration
+      navigate("/login");
+    } catch (error) {
+      console.error("Error verifying OTP:", error);
+      toast.error("OTP verification failed. Please try again.");
+    }
+  };
+
   return (
     <>
-      <div>
+      <div
+        style={{
+          marginBottom: "60px",
+        }}
+      >
         <div>
           <title>On Line Bus Booking</title>
           <Navbar />
@@ -190,8 +227,58 @@ export default function Register() {
               </div>
             </div>
           </form>
+          {otpSent && (
+            <div
+              style={{
+                maxWidth: "300px",
+                margin: "0 auto",
+                textAlign: "center",
+              }}
+            >
+              <h2 style={{ fontSize: "24px", marginBottom: "20px" }}>
+                Enter OTP
+              </h2>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginBottom: "20px",
+                }}
+              >
+                <input
+                  style={{
+                    width: "200px",
+                    height: "40px",
+                    textAlign: "center",
+                    fontSize: "20px",
+                  }}
+                  type="text"
+                  maxLength={6}
+                  placeholder="Enter OTP"
+                  value={otp}
+                  onChange={handleOTPChange}
+                />
+              </div>
+              <button
+                style={{
+                  padding: "10px 20px",
+                  fontSize: "16px",
+                  backgroundColor: "#4caf50",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "6px",
+                  cursor: "pointer",
+                  transition: "background-color 0.3s",
+                }}
+                onClick={verifyOTP}
+              >
+                Verify OTP
+              </button>
+            </div>
+          )}
         </div>
       </div>
+
       <Footer />
     </>
   );

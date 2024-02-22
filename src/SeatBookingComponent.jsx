@@ -142,7 +142,7 @@ const SeatBookingComponent = () => {
   if (!selectedBus) {
     <div>Loading......</div>;
   }
-
+  const totalSeats = 30;
   return (
     <div className={styles.container1}>
       <div>
@@ -176,7 +176,6 @@ const SeatBookingComponent = () => {
               </div>
             ))}
           </div>
-
           <div className={styles.singleSeat}>
             <div
               key={`column-3-seat-1`}
@@ -188,7 +187,6 @@ const SeatBookingComponent = () => {
               23
             </div>
           </div>
-
           <div className={styles.column}>
             {[...Array(11)].map((_, index) => (
               <div
@@ -202,7 +200,6 @@ const SeatBookingComponent = () => {
               </div>
             ))}
           </div>
-
           <div className={styles.column}>
             {[...Array(11)].map((_, index) => (
               <div

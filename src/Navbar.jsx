@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -8,17 +9,44 @@ const Navbar = () => {
     localStorage.getItem("isLoggedIn") === "true"
   );
   const name = localStorage.getItem("name");
+  // const googleRes = localStorage.getItem("googleRes");
+  // const accessToken = JSON.parse(googleRes);
+  // console.log("🚀 ~ Navbar ~ googleRes:", accessToken.access_token);
+  // const [profile, setProfile] = useState(null);
+
   const location = useLocation();
   const navigate = useNavigate();
   // const data = location.state;
 
+  // useEffect(() => {
+  //   if (googleRes) {
+  //     axios
+  //       .get(
+  //         `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${accessToken.access_token}`,
+  //         {
+  //           headers: {
+  //             Authorization: `Bearer ${accessToken.access_token}`,
+  //             Accept: "application/json",
+  //           },
+  //         }
+  //       )
+  //       .then((res) => {
+  //         setIsLoggedIn(true);
+  //         console.log(res.data);
+  //         setProfile(res.data?.name);
+  //       })
+  //       .catch((err) => console.log(err));
+  //   }
+  // }, [googleRes]);
+
   function handlelogout() {
     localStorage.setItem("isLoggedIn", "false");
     setIsLoggedIn(false);
-    toast.error("Logged out.");
+    toast.success("Logged out.");
 
     navigate("/login");
   }
+
   return (
     <div className="navbar navbar-default navbar-fixed-top">
       <div className="container">
