@@ -16,7 +16,6 @@ const SeatBookingComponent = () => {
 
   const navigate = useNavigate();
   const { busId } = useParams();
-  // const selectedBus = busData?.find((bus) => bus._id === busId);
   const selecteddate = localStorage.getItem("selecteddate");
   const handleSeatClick = (seatNumber) => {
     setSelectedSeats((prevSelectedSeats) => {
