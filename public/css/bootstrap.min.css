@@ -315,7 +315,9 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
-  background-color: rgb(193, 189, 186);
+  background: -webkit-radial-gradient(circle, #1a82f7, #2F2727);
+  /* background-color:white; */
+  /* rgb(193, 189, 186) */
 }
 
 input,

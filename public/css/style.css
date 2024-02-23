@@ -9,8 +9,9 @@ html {
 }
 
 body {
-  background-color: rgb(193, 189, 186);
+  background-color:white ;
   font-family: "Titillium Web", sans-serif;
+  /* rgb(193, 189, 186) */
 }
 
 a {
