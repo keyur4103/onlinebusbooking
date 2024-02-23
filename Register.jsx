@@ -124,7 +124,7 @@ export default function Register() {
                             Last Name
                           </span>
                           <input
-                            {...register("LastName", {
+                            {...register("lastName", {
                               required: "Please enter your last name.",
                             })}
                             type="text"

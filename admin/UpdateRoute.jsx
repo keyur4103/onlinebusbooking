@@ -109,12 +109,10 @@ function UpdateRoute() {
                       <span id={`bustype${index}`}>{bus.bustype}</span>
                     </td>
                     <td>
-                      <a href={`/admin/editroute/${bus._id}`}>
-                        updateroute details
-                      </a>
-                      &nbsp;
+                      <a href={`/admin/editroute/${bus._id}`}>updateroute</a>
+                      &nbsp; &nbsp;
                       <a href="" onClick={(e) => deleteBus(e, bus._id)}>
-                        Deleteroute details
+                        Deleteroute
                       </a>
                     </td>
                   </tr>

@@ -69,7 +69,13 @@ function BookingReport() {
                   <td>{passenger.origin}</td>
                   <td>{passenger.destination}</td>
                   <td>{passenger.selecteddate}</td>
-                  <td>{passenger.confirmseats[0]}</td>
+                  <td>
+                    {passenger.confirmseats.map((seat, index) => (
+                      <span key={index}>
+                        {index > 0 && ", "} {seat}
+                      </span>
+                    ))}
+                  </td>
                   <td>{passenger.totalamount}</td>
                   <td>
                     {passenger.userId

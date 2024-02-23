@@ -75,7 +75,7 @@ function AdminNavbar() {
                   id="A3"
                   style={{ fontWeight: "bold" }}
                 >
-                  canclerequest
+                  Cancel Ticket
                 </a>
               </li>
             </ul>
