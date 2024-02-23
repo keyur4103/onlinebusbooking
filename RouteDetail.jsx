@@ -38,10 +38,12 @@ export default function RouteDetail() {
         } else {
           console.error(`Error: ${response.status} - ${response.statusText}`);
           toast.error("Error fetching bus details. Please try again.");
+          navigate("/searchbus");
         }
       } catch (error) {
         console.error("Error fetching data from API:", error);
         toast.error("Error fetching bus details. Please try again.");
+        navigate("/searchbus");
       }
     };
 

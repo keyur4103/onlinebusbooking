@@ -90,7 +90,6 @@ const SeatBookingComponent = () => {
     }
   };
   useEffect(() => {
-    console.log("object121454");
     const fetchBusDetail = async () => {
       try {
         const response = await fetch(
@@ -102,17 +101,22 @@ const SeatBookingComponent = () => {
           console.log("🚀 ~ fetchBusDetail ~ data:", data);
           setBusDetail(data);
         } else {
+          navigate("/searchbus");
+
           console.error(`Error: ${response.status} - ${response.statusText}`);
           // Handle error as needed
         }
       } catch (error) {
-        console.error("Error fetching data from API:", error);
+        toast.error("Error fetching data from API:", error);
+        navigate("/searchbus");
+
         // Handle error as needed
       }
     };
 
     fetchBusDetail();
   }, []);
+
   useEffect(() => {
     // Fetch confirmed seats for the selected date when the component mounts
     const fetchConfirmedSeats = async () => {
