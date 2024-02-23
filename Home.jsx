@@ -25,7 +25,7 @@ function Home() {
               <div className="panel panel-default">
                 <div className="panel-heading">
                   <div className="panel-title">
-                    <h3>Introduction About Online Bus Booking</h3>
+                    <h3>Introduction About Online Bus</h3>
                   </div>
                 </div>
                 <div className="panel-body">
