@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import html2pdf from "html2pdf.js";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 const MyBooking = ({ userId }) => {
   const [bookingData, setBookingData] = useState([]);
@@ -71,6 +72,10 @@ const MyBooking = ({ userId }) => {
         return; // If user cancels, do nothing
       }
 
+      const sendTicketsms = await axios.post(
+        `${import.meta.env.VITE_LIVE_SERVER}/api/deleteticket/${bookingId}`
+      );
+
       const response = await fetch(
         `${import.meta.env.VITE_LIVE_SERVER}/cancel/${bookingId}`,
         {
@@ -82,7 +87,8 @@ const MyBooking = ({ userId }) => {
           body: JSON.stringify({ userId: UserId }),
         }
       );
-
+      console.log(bookingId);
+      console.log(sendTicketsms);
       if (response.ok) {
         // Update booking data after cancellation
 

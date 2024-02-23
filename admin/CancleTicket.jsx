@@ -18,35 +18,35 @@ const CancelTicket = () => {
       });
   }, []);
 
-  const deleteTicket = (cancleid) => {
-    const confirmDelete = window.confirm(
-      "Are you sure you want to cancel this ticket?"
-    );
-    if (!confirmDelete) {
-      return; // If user cancels, do nothing
-    }
+  // const deleteTicket = (cancleid) => {
+  //   const confirmDelete = window.confirm(
+  //     "Are you sure you want to cancel this ticket?"
+  //   );
+  //   if (!confirmDelete) {
+  //     return; // If user cancels, do nothing
+  //   }
 
-    axios
-      .delete(
-        `${import.meta.env.VITE_LIVE_SERVER}/api/deleteticket/${cancleid}`
-      )
-      .then((response) => {
-        toast.success("Ticket canceled successfully");
+  //   axios
+  //     .delete(
+  //       `${import.meta.env.VITE_LIVE_SERVER}/api/deleteticket/${cancleid}`
+  //     )
+  //     .then((response) => {
+  //       toast.success("Ticket canceled successfully");
 
-        // Refresh the bookings after deletion
-        axios
-          .get(`${import.meta.env.VITE_LIVE_SERVER}/api/canclebookings`)
-          .then((response) => {
-            setBookings(response.data);
-          })
-          .catch((error) => {
-            toast.error("Error fetching bookings:", error);
-          });
-      })
-      .catch((error) => {
-        toast.error("Error canceling ticket:", error);
-      });
-  };
+  //       // Refresh the bookings after deletion
+  //       axios
+  //         .get(`${import.meta.env.VITE_LIVE_SERVER}/api/canclebookings`)
+  //         .then((response) => {
+  //           setBookings(response.data);
+  //         })
+  //         .catch((error) => {
+  //           toast.error("Error fetching bookings:", error);
+  //         });
+  //     })
+  //     .catch((error) => {
+  //       toast.error("Error canceling ticket:", error);
+  //     });
+  // };
 
   return (
     <>
@@ -69,7 +69,7 @@ const CancelTicket = () => {
               <th>Date of journey</th>
               <th>Selected Seat</th>
               <th>Status</th>
-              <th>Actions</th>
+              {/* <th>Actions</th> */}
             </tr>
 
             {bookings.map((booking, index) => (
@@ -95,14 +95,14 @@ const CancelTicket = () => {
                 <td>
                   <span id="Status">{booking.status}</span>
                 </td>
-                <td>
+                {/* <td>
                   <button
                     onClick={() => deleteTicket(booking.cancleid)}
                     disabled={booking.status === "success"}
                   >
                     Approve
                   </button>
-                </td>
+                </td> */}
               </tr>
             ))}
           </tbody>
