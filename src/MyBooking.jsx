@@ -29,11 +29,12 @@ const MyBooking = ({ userId }) => {
     const pdfContent = `
     <div>
 
-      <p>Bus Name: ${booking.busname}</p>
-      <p>Origin: ${booking.origin}</p>
-      <p>Destination: ${booking.destination}</p>
-      <p>Date of journey: ${booking.selecteddate}</p>
-      <p>Selected Seat: ${booking.selectedseat}</p>
+      <p style="color:blue;text-align:center;">Bus Name: ${booking.busname}</p>
+      <p style="color:blue;text-align:center;">Origin: ${booking.origin}</p>
+      <p style="color:blue;text-align:center;">Destination: ${booking.destination}</p>
+      <p style="color:blue;text-align:center;">Date of journey: ${booking.selecteddate}</p>
+      <p style="color:blue;text-align:center;">Selected Seat: ${booking.selectedseat}</p>
+      
     </div>
   `;
 
@@ -60,6 +61,43 @@ const MyBooking = ({ userId }) => {
       console.error("Error generating PDF:", error);
     } finally {
       document.body.removeChild(tempContainer);
+    }
+  };
+
+  const downloadTicketss = async (booking) => {
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_LIVE_SERVER}/api/generatepdf`,
+        {
+          booking: booking,
+        },
+        {
+          responseType: "arraybuffer", // Specify responseType as arraybuffer
+        }
+      );
+      console.log("🚀 ~ downloadTicketss ~ response:", response);
+
+      // Create a Blob from the array buffer data received in the response
+      const pdfBlob = new Blob([response.data], { type: "application/pdf" });
+
+      // Create a URL for the Blob
+      const url = window.URL.createObjectURL(pdfBlob);
+
+      // Create a link element to trigger the download
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "ticket.pdf";
+      document.body.appendChild(link);
+
+      // Trigger the download
+      link.click();
+
+      // Cleanup
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("Error downloading PDF:", error);
+      // Handle the error, e.g., display an error message to the user
     }
   };
 
@@ -141,7 +179,7 @@ const MyBooking = ({ userId }) => {
                 <span id="Fare">{booking.selectedseat}</span>
               </td>
               <td>
-                <button onClick={() => downloadTicket(booking)}>
+                <button onClick={() => downloadTicketss(booking)}>
                   Download Ticket
                 </button>
                 <button onClick={() => cancelTicket(booking.bookingId)}>
