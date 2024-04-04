@@ -68,8 +68,9 @@ const PassengerDetails = () => {
           const sendTicketResponse = await axios.post(
             `${
               import.meta.env.VITE_LIVE_SERVER
-            }/sendTicketByEmailss/${passengerId}`
+            }/sendTicketByEmailsss/${passengerId}`
           );
+
           const sendTicketsms = await axios.post(
             `${import.meta.env.VITE_LIVE_SERVER}/sendTicketBysms/${passengerId}`
           );
